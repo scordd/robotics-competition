@@ -1,13 +1,19 @@
 #include "Jvlib.h"
-#include "Servo.h"
+#include <Servo.h>
 #include <CrcLib.h>
 using namespace Crc;
+
+int motorPin = 7;
+Servo motor;
 
 void setup() {
   // put your setup code here, to run once:
   CrcLib::Initialize();
   Serial.begin(9600);
 
+  pinMode(motorPin, OUTPUT);
+  pinMode(7, OUTPUT); 
+  motor.attach(motorPin);
   
   // 1 motor (for high-torque control of the arm)
   CrcLib::InitializePwmOutput(CRC_PWM_7);
@@ -21,7 +27,7 @@ void setup() {
   CrcLib::Update();
 
   // CODE BELOW IS FOR THE ARM OF THE BOT
-
+  
   
   // CODE BELOW IS FOR THE MOVEMENT OF THE BOT
   forward();
@@ -30,5 +36,6 @@ void setup() {
 }
 
 void loop() {
-
+  CrcLib::Initialize();
+  CrcLib::SetPwmOutput(CRC_PWM_7, 100);
 }
