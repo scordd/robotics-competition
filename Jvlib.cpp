@@ -33,3 +33,17 @@ int back()
   }
   return 0;
 }
+
+int servo()
+{
+
+  for (int i = 0; i < 50000; i++) {
+    CrcLib::Initialize();
+
+    CrcLib::SetPwmOutput(CRC_PWM_7, 100);
+    CrcLib::SetPwmOutput(CRC_PWM_7, -100);
+
+    CrcLib::Update();
+  }
+  return 0;
+}
