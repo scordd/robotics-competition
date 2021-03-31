@@ -9,4 +9,6 @@ int forward();
 
 int back();
 
+int servo();
+
 #endif
