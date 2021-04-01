@@ -28,6 +28,6 @@ void setup() {
 }
 
 void loop() {
-  CrcLib::Initialize();
+  CrcLib::Update();
 
 }
