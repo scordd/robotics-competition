@@ -30,11 +30,15 @@ void setup() {
   CrcLib::InitializePwmOutput(CRC_PWM_11);
 
   // IMPORTANT - READ BELOW!!!!
-  
+
   // CODE BELOW IS FOR SCRIPTING - DO NOT MAKE CHANGES WITHOUT CONSULTING THE REST OF THE GROUP AND UPLOADING TO GITHUB AFTERWARDS
 
-
-
+  for (int i; i <= 1000; i++) {
+    CrcLib::SetPwmOutput(FL, 100);
+    CrcLib::SetPwmOutput(BL, 100);
+    CrcLib::SetPwmOutput(FR, 100);
+    CrcLib::SetPwmOutput(BR, 100);
+  }
 
 
 
