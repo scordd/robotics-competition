@@ -38,13 +38,13 @@ void loop() {
   CrcLib::Update();
 
 
-  // MOVE EVERYTHING TO VOID SETUP() ONCE SCRIPTING HAS BEGUN
+  // UNCOMMENT IF YOU WANT TO TEST
 
 
   // CODE BELOW IS FOR THE MOVEMENT OF THE BOT (forward)
 
-  //  CrcLib::SetPwmOutput(FL, 100);
-  //  CrcLib::SetPwmOutput(BL, 100);
+  //  CrcLib::SetPwmOutput(FL, -100);
+  //  CrcLib::SetPwmOutput(BL, -100);
   //  CrcLib::SetPwmOutput(FR, 100);
   //  CrcLib::SetPwmOutput(BR, 100);
 
@@ -65,6 +65,10 @@ void loop() {
 
   // CODE BELOW IS FOR TESTING ROTATION
 
+//  CrcLib::SetPwmOutput(FL, 100);
+  //  CrcLib::SetPwmOutput(BL, 100);
+  //  CrcLib::SetPwmOutput(FR, 100);
+  //  CrcLib::SetPwmOutput(BR, 100);
 
 
 
