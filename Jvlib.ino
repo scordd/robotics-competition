@@ -25,10 +25,10 @@ void setup() {
   // CODE BELOW IS FOR THE MOVEMENT OF THE BOT
   forward();
   back();
-
+  servo();
 }
 
 void loop() {
   CrcLib::Initialize();
-  CrcLib::SetPwmOutput(CRC_PWM_7, 100);
+
 }
