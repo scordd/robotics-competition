@@ -20,12 +20,11 @@ void setup() {
   CrcLib::Update();
 
   // CODE BELOW IS FOR THE ARM OF THE BOT
-  
+  servo();
   
   // CODE BELOW IS FOR THE MOVEMENT OF THE BOT
   forward();
   back();
-  servo();
 }
 
 void loop() {
