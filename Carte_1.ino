@@ -26,14 +26,15 @@ void setup() {
   
   CrcLib::Update();
   
-  
+
+  // C.U.M.
   // SCRIPTING HAPPENS HERE
   
-  forward(5000);
-  backward(5000);
+  grab(1);
+  donetime(50000);
+  drop(500);
+  done;
 
-  
-  
   
   
   
@@ -73,15 +74,6 @@ void loop() {
 
 
 
-
-
-
-
-
-
-
-
-
 int forward(int t) // moving robot forwards
 {
   for (int i = 0; i < t; i++) {
@@ -92,10 +84,9 @@ int forward(int t) // moving robot forwards
     CrcLib::SetPwmOutput(CRC_PWM_11, -75);
     CrcLib::Update();
   };
-  done();
+  donetime(1);
   return 0;
 };
-
 
 
 int backward(int t) // moving robot backwards
@@ -109,10 +100,9 @@ int backward(int t) // moving robot backwards
 
     CrcLib::Update();
   };
-  done();
+  donetime(1);
   return 0;
 };
-
 
 
 int right(int t) // turning towards the right
@@ -126,7 +116,7 @@ int right(int t) // turning towards the right
 
     CrcLib::Update();
   };
-  done();
+  donetime(1);
   return 0;
 };
 
@@ -142,9 +132,10 @@ int left(int t) // turning towards the left
 
     CrcLib::Update();
   };
-  done();
+  donetime(1);
   return 0;
 };
+
 
 
 
@@ -156,7 +147,7 @@ int up(int t) // for vertical motor lifting the C.U.M.
 
     CrcLib::Update();
   };
-  done();
+  donetime(1);
   return 0;
 };
 
@@ -170,7 +161,7 @@ int down(int t) // for vertical motor lowering the C.U.M
 
     CrcLib::Update();
   };
-  done();
+  donetime(1);
   return 0;
 };
 
@@ -180,12 +171,10 @@ int grab(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_6, -50);
-    CrcLib::SetPwmOutput(CRC_PWM_7, 50);
+    CrcLib::SetPwmOutput(CRC_PWM_7, -75);
 
     CrcLib::Update();
   };
-  done();
   return 0;
 };
 
@@ -193,12 +182,10 @@ int drop(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_6, 50);
-    CrcLib::SetPwmOutput(CRC_PWM_7, -50);
+    CrcLib::SetPwmOutput(CRC_PWM_7, 75);
 
     CrcLib::Update();
   };
-  done();
   return 0;
 };
 
@@ -218,4 +205,21 @@ void done() // stops all code
     CrcLib::Update();
   
 
+};
+
+
+int donetime(int t) // turning towards the right
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(CRC_PWM_8, 0);
+    CrcLib::SetPwmOutput(CRC_PWM_9, 0);
+    CrcLib::SetPwmOutput(CRC_PWM_10, 0);
+    CrcLib::SetPwmOutput(CRC_PWM_11, 0);
+
+    CrcLib::SetPwmOutput(CRC_PWM_5, 0);
+
+    CrcLib::Update();
+  }
+  return 0;
 };
