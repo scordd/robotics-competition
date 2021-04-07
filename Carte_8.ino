@@ -13,8 +13,9 @@ void setup() {
   CrcLib::SetDigitalPinMode(CRC_DIG_5, INPUT);
 
   // vertical motor (for high-torque control of the arm)
-  CrcLib::InitializePwmOutput(CRC_PWM_7);
+  CrcLib::InitializePwmOutput(CRC_PWM_5);
   // horizontal motor
+  CrcLib::InitializePwmOutput(CRC_PWM_6);
   CrcLib::InitializePwmOutput(CRC_PWM_7);
 
   // set of 4 motors that will be used for moving the entire robot
