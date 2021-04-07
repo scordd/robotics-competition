@@ -26,9 +26,23 @@ void setup() {
   
   CrcLib::Update();
   
+  
+  // SCRIPTING HAPPENS HERE
+  
   forward(5000);
   backward(5000);
 
+  
+  
+  
+  
+  
+  
+  
+  
+  // SCRIPTING ENDS HERE
+  
+  
   CrcLib::Update();
 }
 
@@ -42,6 +56,30 @@ void setup() {
 void loop() {
     CrcLib::Update();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int forward(int t) // moving robot forwards
