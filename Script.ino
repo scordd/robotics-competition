@@ -50,9 +50,9 @@ void loop() {
 
   if (ButtonState = HIGH){
       left(5000);
-      forward(50000);
-      backward(50000);
-      right(50000);
+      forward(5000);
+      backward(5000);
+      right(5000);
       
       CrcLib::Update();
     } else {
