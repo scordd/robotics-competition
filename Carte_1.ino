@@ -30,10 +30,9 @@ void setup() {
   // C.U.M.
   // SCRIPTING HAPPENS HERE
   
-  grab(1);
-  donetime(50000);
-  drop(500);
-  done;
+
+  right(500);
+  done();
 
   
   
@@ -109,10 +108,10 @@ int right(int t) // turning towards the right
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_8, 50);
-    CrcLib::SetPwmOutput(CRC_PWM_9, 50);
-    CrcLib::SetPwmOutput(CRC_PWM_10, 50);
-    CrcLib::SetPwmOutput(CRC_PWM_11, 50);
+    CrcLib::SetPwmOutput(CRC_PWM_8, -50);
+    CrcLib::SetPwmOutput(CRC_PWM_9, -50);
+    CrcLib::SetPwmOutput(CRC_PWM_10, -50);
+    CrcLib::SetPwmOutput(CRC_PWM_11, -50);
 
     CrcLib::Update();
   };
@@ -125,10 +124,10 @@ int left(int t) // turning towards the left
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_8, -50);
-    CrcLib::SetPwmOutput(CRC_PWM_9, -50);
-    CrcLib::SetPwmOutput(CRC_PWM_10, -50);
-    CrcLib::SetPwmOutput(CRC_PWM_11, -50);
+    CrcLib::SetPwmOutput(CRC_PWM_8, 50);
+    CrcLib::SetPwmOutput(CRC_PWM_9, 50);
+    CrcLib::SetPwmOutput(CRC_PWM_10, 50);
+    CrcLib::SetPwmOutput(CRC_PWM_11, 50);
 
     CrcLib::Update();
   };
@@ -171,7 +170,7 @@ int grab(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_7, -75);
+    CrcLib::SetPwmOutput(CRC_PWM_7, 75);
 
     CrcLib::Update();
   };
@@ -182,7 +181,7 @@ int drop(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_7, 75);
+    CrcLib::SetPwmOutput(CRC_PWM_7, -75);
 
     CrcLib::Update();
   };
