@@ -1,7 +1,7 @@
 #include <CrcLib.h>
 using namespace Crc;
 
-bool ButtonState;
+bool ButtonState = LOW;
 
 void setup() {
   // put your setup code here, to run once:
