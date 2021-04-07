@@ -23,9 +23,14 @@ void setup() {
   CrcLib::InitializePwmOutput(CRC_PWM_9);
   CrcLib::InitializePwmOutput(CRC_PWM_10);
   CrcLib::InitializePwmOutput(CRC_PWM_11);
+  
+  CrcLib::Update();
+  
+  forward(5000);
+  backward(5000);
 
-
-};
+  CrcLib::Update();
+}
 
 //  forward and back are for mouvement
 // left and right are for rotation
@@ -35,26 +40,8 @@ void setup() {
 
 
 void loop() {
-  ButtonState = CrcLib::GetDigitalInput(CRC_DIG_5);
-
-  if (ButtonState = HIGH) {
-    
-    forwardpressure(5000); // 2 peids
-    drop(7000);
-    backward(5000); // 2 peids
-    right(5000); // 45 degrée
-    forward(5000); // X peids
-    grab(400); // bras mouvement horizontal
-    uppressure(4000); // bras mouvement vertical
-    forwardpressure(5000); // X peids
-    drop(300); // bras mouvement horizontal
-
     CrcLib::Update();
-  } else {
-    grab(5);
-    CrcLib::Update();
-  }
-};
+}
 
 
 int forward(int t) // moving robot forwards
@@ -62,12 +49,12 @@ int forward(int t) // moving robot forwards
   for (int i = 0; i < t; i++) {
 
     CrcLib::SetPwmOutput(CRC_PWM_8, 75);
-    CrcLib::SetPwmOutput(CRC_PWM_9, -75);
-    CrcLib::SetPwmOutput(CRC_PWM_10, 75);
+    CrcLib::SetPwmOutput(CRC_PWM_9, 75);
+    CrcLib::SetPwmOutput(CRC_PWM_10, -75);
     CrcLib::SetPwmOutput(CRC_PWM_11, -75);
-
     CrcLib::Update();
-  }
+  };
+  done();
   return 0;
 };
 
@@ -76,15 +63,15 @@ int forwardpressure(int t) // moving robot forwards
   for (int i = 0; i < t; i++) {
 
     CrcLib::SetPwmOutput(CRC_PWM_8, 75);
-    CrcLib::SetPwmOutput(CRC_PWM_9, -75);
-    CrcLib::SetPwmOutput(CRC_PWM_10, 75);
+    CrcLib::SetPwmOutput(CRC_PWM_9, 75);
+    CrcLib::SetPwmOutput(CRC_PWM_10, -75);
     CrcLib::SetPwmOutput(CRC_PWM_11, -75);
 
     CrcLib::SetPwmOutput(CRC_PWM_6, -25);
     CrcLib::SetPwmOutput(CRC_PWM_7, 25);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -93,12 +80,12 @@ int backward(int t) // moving robot backwards
   for (int i = 0; i < t; i++) {
 
     CrcLib::SetPwmOutput(CRC_PWM_8, -75);
-    CrcLib::SetPwmOutput(CRC_PWM_9, 75);
-    CrcLib::SetPwmOutput(CRC_PWM_10, -75);
+    CrcLib::SetPwmOutput(CRC_PWM_9, -75);
+    CrcLib::SetPwmOutput(CRC_PWM_10, 75);
     CrcLib::SetPwmOutput(CRC_PWM_11, 75);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -115,7 +102,7 @@ int backwardpressure(int t) // moving robot forwards
     CrcLib::SetPwmOutput(CRC_PWM_7, 25);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -129,7 +116,7 @@ int right(int t) // turning towards the right
     CrcLib::SetPwmOutput(CRC_PWM_11, 50);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -146,7 +133,7 @@ int rightpressure(int t) // turning towards the right
     CrcLib::SetPwmOutput(CRC_PWM_7, 25);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 int left(int t) // turning towards the left
@@ -159,7 +146,7 @@ int left(int t) // turning towards the left
     CrcLib::SetPwmOutput(CRC_PWM_11, -50);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -177,7 +164,7 @@ int leftpressure(int t) // turning towards the right
     CrcLib::SetPwmOutput(CRC_PWM_7, 25);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -188,7 +175,7 @@ int up(int t) // for vertical motor lifting the C.U.M.
     CrcLib::SetPwmOutput(CRC_PWM_5, 50);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -203,7 +190,7 @@ int uppressure(int t) // for vertical motor lifting the C.U.M.
     CrcLib::SetPwmOutput(CRC_PWM_7, 25);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -214,7 +201,7 @@ int down(int t) // for vertical motor lowering the C.U.M
     CrcLib::SetPwmOutput(CRC_PWM_5, -50);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -229,7 +216,7 @@ int downpressure(int t) // for vertical motor lifting the C.U.M.
     CrcLib::SetPwmOutput(CRC_PWM_7, 25);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -241,7 +228,7 @@ int grab(int t) // for horizontal motors to grab object
     CrcLib::SetPwmOutput(CRC_PWM_7, 50);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
@@ -253,13 +240,12 @@ int drop(int t) // for horizontal motors to grab object
     CrcLib::SetPwmOutput(CRC_PWM_7, -50);
 
     CrcLib::Update();
-  }
+  };
   return 0;
 };
 
-int done(int t) // turning towards the right
+void done() // stops all code
 {
-  for (int i = 0; i < t; i++) {
 
     CrcLib::SetPwmOutput(CRC_PWM_8, 0);
     CrcLib::SetPwmOutput(CRC_PWM_9, 0);
@@ -272,6 +258,6 @@ int done(int t) // turning towards the right
     CrcLib::SetPwmOutput(CRC_PWM_5, 0);
 
     CrcLib::Update();
-  }
-  return 0;
+  
+
 };
