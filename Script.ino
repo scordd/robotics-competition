@@ -10,10 +10,6 @@ using namespace Crc;
 
 bool ButtonState = LOW;
 
-int forwardTime = 0;
-int backwardTime = 0;
-int servoCloseTime = 0;
-int servoOpenTime = 0;
 
 void setup() {
   CrcLib::Initialize();
