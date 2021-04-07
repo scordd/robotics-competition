@@ -1,0 +1,17 @@
+commencer au centre
+
+1. rotation gauche de 135 degrée 
+2. Avencer de X peids 
+3. utiliser le mouvement de bras pour prendre le cube
+4. rotation droite de 180 degrée 
+5. Avencer de X peids
+6. rotation gauche de 45 degrée
+7. avancée de 2 peids
+8. laisser aller le cube dans la zone
+9. retourner de 2 peids
+10. rotation droite de 45 degrée 
+11. Avencer de X peids 
+12. utiliser le bras pour prendre la ball et la lever
+13. Avencer de X peids
+14. drop la ball dans le panier
+

@@ -1,0 +1,20 @@
+commencer au centre
+
+
+
+1. avancée de deux peids
+2. lasser aller le block
+3. reculer de deux peids
+4. rotation 180 degrée vers la droit
+5. avancée de deux peids 
+6. utiliser le bras pour prendre et lever le triangle 
+7. rotation 180 degrée vers la gauche
+8. avancer 4 peids 
+9. drop le triangle sure le block
+10. reculer de deux peids
+11. rotation droit 45 degrée 
+12. avancée de deux peids
+13. prendre la balle de tennis 
+14. lever la balle 
+15. avancer au fillet 
+16. drop la balle dans le fillet
