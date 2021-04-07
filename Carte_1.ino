@@ -72,6 +72,7 @@ int forwardpressure(int t) // moving robot forwards
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -86,6 +87,7 @@ int backward(int t) // moving robot backwards
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -103,6 +105,7 @@ int backwardpressure(int t) // moving robot forwards
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -117,6 +120,7 @@ int right(int t) // turning towards the right
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -134,6 +138,7 @@ int rightpressure(int t) // turning towards the right
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 int left(int t) // turning towards the left
@@ -147,6 +152,7 @@ int left(int t) // turning towards the left
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -165,6 +171,7 @@ int leftpressure(int t) // turning towards the right
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -176,6 +183,7 @@ int up(int t) // for vertical motor lifting the C.U.M.
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -191,6 +199,7 @@ int uppressure(int t) // for vertical motor lifting the C.U.M.
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -202,6 +211,7 @@ int down(int t) // for vertical motor lowering the C.U.M
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -217,6 +227,7 @@ int downpressure(int t) // for vertical motor lifting the C.U.M.
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -229,6 +240,7 @@ int grab(int t) // for horizontal motors to grab object
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
@@ -241,6 +253,7 @@ int drop(int t) // for horizontal motors to grab object
 
     CrcLib::Update();
   };
+  done();
   return 0;
 };
 
