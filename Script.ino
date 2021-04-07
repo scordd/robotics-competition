@@ -8,6 +8,8 @@ using namespace Crc;
 #define FL CRC_PWM_10
 #define FR CRC_PWM_8
 
+bool ButtonState = LOW;
+
 int forwardTime = 0;
 int backwardTime = 0;
 int servoCloseTime = 0;
