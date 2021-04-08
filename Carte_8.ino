@@ -1,7 +1,8 @@
 #include <CrcLib.h>
 using namespace Crc;
 
-#define PULLY CRC_PWM_6
+#define BUTT CRC_DIG_5
+#define PULLY CRC_PWM_5
 #define SERVO CRC_PWM_7
 #define BL CRC_PWM_11
 #define BR CRC_PWM_9
@@ -15,29 +16,31 @@ void setup() {
   CrcLib::Initialize();
   Serial.begin(9600);
 
-    Serial.print("The code execution time is ");
+  Serial.print("The code execution time is ");
   Serial.print(CrcLib::GetDeltaTimeMillis());
   Serial.println(" ms.");
 
   Serial.println("The debug code has been run; robot is properly connected and functioning.");
 
   // button for starting the code
-  CrcLib::SetDigitalPinMode(CRC_DIG_5, INPUT);
+  CrcLib::SetDigitalPinMode(BUTT, INPUT);
 
-  // vertical motor (for high-torque control of the arm)
-  CrcLib::InitializePwmOutput(CRC_PWM_5);
   // horizontal motor
-  CrcLib::InitializePwmOutput(CRC_PWM_6);
-  CrcLib::InitializePwmOutput(CRC_PWM_7);
+  CrcLib::InitializePwmOutput(SERVO);
+  // vertical motor
+  CrcLib::InitializePwmOutput(PULLY);
 
   // set of 4 motors that will be used for moving the entire robot
-  CrcLib::InitializePwmOutput(CRC_PWM_8);
-  CrcLib::InitializePwmOutput(CRC_PWM_9);
-  CrcLib::InitializePwmOutput(CRC_PWM_10);
-  CrcLib::InitializePwmOutput(CRC_PWM_11);
-
-
+  CrcLib::InitializePwmOutput(FR);
+  CrcLib::InitializePwmOutput(BR);
+  CrcLib::InitializePwmOutput(FL);
+  CrcLib::InitializePwmOutput(BL);
+  
+  CrcLib::Update();
+  
+  
 };
+
 
 //  forward and back are for mouvement
 // left and right are for rotation
@@ -51,22 +54,22 @@ void loop() {
 
   if (ButtonState = HIGH) {
     
-    forwardpressure(5000); // 2 peids
+    forward(5000); // 2 peids
     drop(7000);
     backward(5000); // 2 peids
     right(5000); // 180 degrée
     forward(5000); // 2 peids
     grab(400); // bras mouvement horizontal
-    uppressure(4000); // bras mouvement vertical
-    leftpressure(400); // 45 degrée 
-    forwardpressure(5000); // 4 peids
+    up(4000); // bras mouvement vertical
+    left(400); // 45 degrée 
+    forward(5000); // 4 peids
     drop(300); // bras mouvement horizontal
     backwards(500); // 2 peids
     right(4000); // 45 degrée 
     forward(399999); // 2 peids
     grab(400);
-    uppressure(50000); 
-    forwardpressure(50000);
+    up(50000); 
+    forward(50000);
     drop(599);
 
     CrcLib::Update();
