@@ -38,7 +38,6 @@ void setup() {
   
   CrcLib::Update();
   
-  CrcLib::Update();
 }
 
 //  forward and back are for mouvement
