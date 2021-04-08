@@ -15,6 +15,12 @@ void setup() {
   CrcLib::Initialize();
   Serial.begin(9600);
 
+    Serial.print("The code execution time is ");
+  Serial.print(CrcLib::GetDeltaTimeMillis());
+  Serial.println(" ms.");
+
+  Serial.println("The debug code has been run; robot is properly connected and functioning.");
+  
   // 1 pully motor (arm)
   CrcLib::InitializePwmOutput(CRC_PWM_6);
 
