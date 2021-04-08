@@ -1,7 +1,8 @@
 #include <CrcLib.h>
 using namespace Crc;
 
-#define PULLY CRC_PWM_6
+#define BUTT CRC_DIG_5
+#define PULLY CRC_PWM_5
 #define SERVO CRC_PWM_7
 #define BL CRC_PWM_11
 #define BR CRC_PWM_9
@@ -22,13 +23,12 @@ void setup() {
   Serial.println("The debug code has been run; robot is properly connected and functioning.");
 
   // button for starting the code
-  CrcLib::SetDigitalPinMode(CRC_DIG_5, INPUT);
+  CrcLib::SetDigitalPinMode(BUTT, INPUT);
 
-  // vertical motor (for high-torque control of the arm)
-  CrcLib::InitializePwmOutput(CRC_PWM_5);
   // horizontal motor
-  CrcLib::InitializePwmOutput(PULLY);
   CrcLib::InitializePwmOutput(SERVO);
+  // vertical motor
+  CrcLib::InitializePwmOutput(PULLY);
 
   // set of 4 motors that will be used for moving the entire robot
   CrcLib::InitializePwmOutput(FR);
@@ -77,6 +77,7 @@ int forward(int t) // moving robot forwards
     CrcLib::SetPwmOutput(BR, 75);
     CrcLib::SetPwmOutput(FL, -75);
     CrcLib::SetPwmOutput(BL, -75);
+    
     CrcLib::Update();
   };
   donetime(1);
@@ -138,7 +139,7 @@ int up(int t) // for vertical motor lifting the C.U.M.
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_5, 50);
+    CrcLib::SetPwmOutput(PULLY, 50);
 
     CrcLib::Update();
   };
@@ -152,7 +153,7 @@ int down(int t) // for vertical motor lowering the C.U.M
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_5, -50);
+    CrcLib::SetPwmOutput(PULLY, -50);
 
     CrcLib::Update();
   };
@@ -166,7 +167,7 @@ int grab(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_7, 75);
+    CrcLib::SetPwmOutput(SERVO, 75);
 
     CrcLib::Update();
   };
@@ -177,7 +178,7 @@ int drop(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(CRC_PWM_7, -75);
+    CrcLib::SetPwmOutput(SERVO, -75);
 
     CrcLib::Update();
   };
@@ -195,8 +196,6 @@ void done() // stops all code
     CrcLib::SetPwmOutput(PULLY, 0);
     CrcLib::SetPwmOutput(SERVO, 0);
 
-    CrcLib::SetPwmOutput(CRC_PWM_5, 0);
-
     CrcLib::Update();
   
 
@@ -212,7 +211,7 @@ int donetime(int t) // turning towards the right
     CrcLib::SetPwmOutput(FL, 0);
     CrcLib::SetPwmOutput(BL, 0);
 
-    CrcLib::SetPwmOutput(CRC_PWM_5, 0);
+    CrcLib::SetPwmOutput(PULLY, 0);
 
     CrcLib::Update();
   }
