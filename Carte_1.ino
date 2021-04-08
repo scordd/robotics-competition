@@ -31,8 +31,6 @@ void setup() {
   
   CrcLib::Update();
   
-
-  // C.U.M.
   // SCRIPTING HAPPENS HERE
   
 
@@ -62,21 +60,7 @@ void loop() {
     CrcLib::Update();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// BOILERPLATE FUNCTIONS BELOW
 
 int forward(int t) // moving robot forwards
 {
