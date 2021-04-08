@@ -270,9 +270,9 @@ int drop(int t) // for horizontal motors to grab object
   return 0;
 };
 
-int done(int t) // turning towards the right
+
+void done() // stops all code
 {
-  for (int i = 0; i < t; i++) {
 
     CrcLib::SetPwmOutput(CRC_PWM_8, 0);
     CrcLib::SetPwmOutput(CRC_PWM_9, 0);
@@ -281,6 +281,23 @@ int done(int t) // turning towards the right
 
     CrcLib::SetPwmOutput(CRC_PWM_6, 0);
     CrcLib::SetPwmOutput(CRC_PWM_7, 0);
+
+    CrcLib::SetPwmOutput(CRC_PWM_5, 0);
+
+    CrcLib::Update();
+  
+
+};
+
+
+int donetime(int t) // turning towards the right
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(CRC_PWM_8, 0);
+    CrcLib::SetPwmOutput(CRC_PWM_9, 0);
+    CrcLib::SetPwmOutput(CRC_PWM_10, 0);
+    CrcLib::SetPwmOutput(CRC_PWM_11, 0);
 
     CrcLib::SetPwmOutput(CRC_PWM_5, 0);
 
