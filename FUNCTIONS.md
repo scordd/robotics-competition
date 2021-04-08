@@ -2,7 +2,7 @@ All the int Functions for the script
 
 
 1. forward(t)
-   ```
+```
     - moves all 4 corner motors at same speed to move robot forward
     - variable t defines the amount of times to run the for loop
     - X times = X cm
@@ -18,14 +18,14 @@ All the int Functions for the script
 ```
 
 3. backward(t)
-   ```
+```
     - moves all 4 corner motors at same speed to move robot backward
     - variable t defines the amount of times to run the for loop
     - X times = X cm
 ```
 
 4. backwardpressure(t) (NOT USED)
-   ``` 
+``` 
     - moves all 4 corner motors at same speed to move robot backward
     - moves both horizontal motors
     - keeps horizontal pressure on object for arm motors 
@@ -41,7 +41,7 @@ All the int Functions for the script
 ```
 
 6. rightpressure(t) (NOT USED)
- ```  
+```  
     - moves all corner motors at same speed to rotate the robot right
     - moves both horizontal motors
     - keeps horizontal pressure on object for arm motors 
