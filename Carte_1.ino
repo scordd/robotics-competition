@@ -1,6 +1,13 @@
 #include <CrcLib.h>
 using namespace Crc;
 
+#define PULLY CRC_PWM_6
+#define SERVO CRC_PWM_7
+#define BL CRC_PWM_11
+#define BR CRC_PWM_9
+#define FL CRC_PWM_10
+#define FR CRC_PWM_8
+
 bool ButtonState = LOW;
 
 void setup() {
