@@ -1,4 +1,4 @@
-All the int Functions for the script
+**All the int Functions for the script
 
 
 1. forward(t)
