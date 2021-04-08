@@ -27,7 +27,7 @@ void setup() {
   // vertical motor (for high-torque control of the arm)
   CrcLib::InitializePwmOutput(CRC_PWM_5);
   // horizontal motor
-  CrcLib::InitializePwmOutput(CRC_PWM_6);
+  CrcLib::InitializePwmOutput(PULLY);
   CrcLib::InitializePwmOutput(SERVO);
 
   // set of 4 motors that will be used for moving the entire robot
@@ -192,7 +192,7 @@ void done() // stops all code
     CrcLib::SetPwmOutput(FL, 0);
     CrcLib::SetPwmOutput(BL, 0);
 
-    CrcLib::SetPwmOutput(CRC_PWM_6, 0);
+    CrcLib::SetPwmOutput(PULLY, 0);
     CrcLib::SetPwmOutput(SERVO, 0);
 
     CrcLib::SetPwmOutput(CRC_PWM_5, 0);
