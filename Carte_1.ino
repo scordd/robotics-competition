@@ -52,14 +52,14 @@ void loop() {
 
   if (ButtonState = HIGH) {
     
-    forwardpressure(5000); // 2 peids
+    forward(5000); // 2 peids
     drop(7000);
     backward(5000); // 2 peids
     right(5000); // 45 degrée
     forward(5000); // X peids
     grab(400); // bras mouvement horizontal
-    uppressure(4000); // bras mouvement vertical
-    forwardpressure(5000); // X peids
+    up(4000); // bras mouvement vertical
+    forward(5000); // X peids
     drop(300); // bras mouvement horizontal
 
     CrcLib::Update();
@@ -72,6 +72,32 @@ void loop() {
     CrcLib::Update();
  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // BOILERPLATE FUNCTIONS BELOW
 
