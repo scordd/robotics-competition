@@ -38,21 +38,6 @@ void setup() {
   
   CrcLib::Update();
   
-  // SCRIPTING HAPPENS HERE
-  
-
-  right(500);
-  done();
-
-  
-  
-  
-  
-  
-  
-  // SCRIPTING ENDS HERE
-  
-  
   CrcLib::Update();
 }
 
