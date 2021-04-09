@@ -48,44 +48,28 @@ void setup() {
 
 
 void loop() {
-    ButtonState = CrcLib::GetDigitalInput(CRC_DIG_5);
+   ButtonState = CrcLib::GetDigitalInput(CRC_DIG_5);
 
   if (ButtonState = HIGH) {
     
     forward(5000); // 2 peids
-    drop(7000);
+    drop(1);
     backward(5000); // 2 peids
     right(5000); // 45 degrée
     forward(5000); // X peids
-    grab(400); // bras mouvement horizontal
-    up(4000); // bras mouvement vertical
+    grab(1); // bras mouvement horizontal
+    up(100); // bras mouvement vertical
     forward(5000); // X peids
-    drop(300); // bras mouvement horizontal
+    drop(1); // bras mouvement horizontal
+    done();
+    
 
     CrcLib::Update();
-  } else {
-    grab(5);
-    CrcLib::Update();
-  }
+  };
+   grab(5);
+   CrcLib::Update();
+
 };
-
-    CrcLib::Update();
- 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -210,7 +194,7 @@ int drop(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(SERVO, -75);
+    CrcLib::SetPwmOutput(SERVO, -25);
 
     CrcLib::Update();
   };
