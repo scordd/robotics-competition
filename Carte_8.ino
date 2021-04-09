@@ -1,15 +1,12 @@
 #include <CrcLib.h>
 using namespace Crc;
 
-#define BUTT CRC_DIG_5
 #define PULLY CRC_PWM_5
 #define SERVO CRC_PWM_7
 #define BL CRC_PWM_11
 #define BR CRC_PWM_9
 #define FL CRC_PWM_10
 #define FR CRC_PWM_8
-
-bool ButtonState = LOW;
 
 void setup() {
   // put your setup code here, to run once:
@@ -22,8 +19,6 @@ void setup() {
 
   Serial.println("The debug code has been run; robot is properly connected and functioning.");
 
-  // button for starting the code
-  CrcLib::SetDigitalPinMode(BUTT, INPUT);
 
   // horizontal motor
   CrcLib::InitializePwmOutput(SERVO);
@@ -50,33 +45,6 @@ void setup() {
 
 
 void loop() {
-  ButtonState = CrcLib::GetDigitalInput(CRC_DIG_5);
-
-  if (ButtonState = HIGH) {
-    
-    forward(5000); // 2 peids
-    drop(7000);
-    backward(5000); // 2 peids
-    right(5000); // 180 degrée
-    forward(5000); // 2 peids
-    grab(400); // bras mouvement horizontal
-    up(4000); // bras mouvement vertical
-    left(400); // 45 degrée 
-    forward(5000); // 4 peids
-    drop(300); // bras mouvement horizontal
-    backwards(500); // 2 peids
-    right(4000); // 45 degrée 
-    forward(399999); // 2 peids
-    grab(400);
-    up(50000); 
-    forward(50000);
-    drop(599);
-
-    CrcLib::Update();
-  } else {
-    grab(5);
-    CrcLib::Update();
-  }
 };
 
 
