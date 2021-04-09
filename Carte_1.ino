@@ -1,14 +1,12 @@
 #include <CrcLib.h>
 using namespace Crc;
 
-#define BUTT CRC_DIG_5
-#define PULLY CRC_PWM_6
+#define PULLY CRC_PWM_5
 #define SERVO CRC_PWM_7
 #define BL CRC_PWM_11
 #define BR CRC_PWM_9
 #define FL CRC_PWM_10
 #define FR CRC_PWM_8
-
 
 void setup() {
   // put your setup code here, to run once:
@@ -21,8 +19,6 @@ void setup() {
 
   Serial.println("The debug code has been run; robot is properly connected and functioning.");
 
-  // button for starting the code
-  CrcLib::SetDigitalPinMode(CRC_DIG_5,INPUT);
   // horizontal motor
   CrcLib::InitializePwmOutput(SERVO);
   // vertical motor
@@ -33,7 +29,20 @@ void setup() {
   CrcLib::InitializePwmOutput(BR);
   CrcLib::InitializePwmOutput(FL);
   CrcLib::InitializePwmOutput(BL);
-  
+
+  // scripting begins here
+
+  right(2650);
+  left(2650);
+
+ 
+
+
+
+  done();
+
+  // scripting ends here
+
   CrcLib::Update();
   
 }
@@ -46,32 +55,8 @@ void setup() {
 
 
 void loop() {
-  
-  if (CrcLib::GetDigitalInput(BUTT)==LOW) {
-    
-    forward(5000); // 2 peids
-    drop(1);
-    backward(5000); // 2 peids
-    right(5000); // 45 degrée
-    forward(5000); // X peids
-    grab(1); // bras mouvement horizontal
-    up(100); // bras mouvement vertical
-    forward(5000); // X peids
-    drop(1); // bras mouvement horizontal
-    done();
-    
-    CrcLib::Update();
-  };
-   grab(5);
-   CrcLib::Update();
 
 };
-
-
-
-
-
-
 
 
 
@@ -151,7 +136,7 @@ int up(int t) // for vertical motor lifting the C.U.M.
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(PULLY, 50);
+    CrcLib::SetPwmOutput(PULLY, 25);
 
     CrcLib::Update();
   };
@@ -165,7 +150,7 @@ int down(int t) // for vertical motor lowering the C.U.M
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(PULLY, -50);
+    CrcLib::SetPwmOutput(PULLY, -25);
 
     CrcLib::Update();
   };
@@ -190,7 +175,7 @@ int drop(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(SERVO, -25);
+    CrcLib::SetPwmOutput(SERVO, -75);
 
     CrcLib::Update();
   };
