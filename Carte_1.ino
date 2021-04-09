@@ -2,7 +2,7 @@
 using namespace Crc;
 
 #define BUTT CRC_DIG_5
-#define PULLY CRC_PWM_5
+#define PULLY CRC_PWM_6
 #define SERVO CRC_PWM_7
 #define BL CRC_PWM_11
 #define BR CRC_PWM_9
