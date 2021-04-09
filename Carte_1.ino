@@ -9,7 +9,6 @@ using namespace Crc;
 #define FL CRC_PWM_10
 #define FR CRC_PWM_8
 
-bool ButtonState = LOW;
 
 void setup() {
   // put your setup code here, to run once:
@@ -23,8 +22,7 @@ void setup() {
   Serial.println("The debug code has been run; robot is properly connected and functioning.");
 
   // button for starting the code
-  CrcLib::SetDigitalPinMode(BUTT, INPUT);
-
+  CrcLib::SetDigitalPinMode(CRC_DIG_5,INPUT);
   // horizontal motor
   CrcLib::InitializePwmOutput(SERVO);
   // vertical motor
@@ -48,9 +46,8 @@ void setup() {
 
 
 void loop() {
-   ButtonState = CrcLib::GetDigitalInput(CRC_DIG_5);
-
-  if (ButtonState = HIGH) {
+  
+  if (CrcLib::GetDigitalInput(BUTT)==LOW) {
     
     forward(5000); // 2 peids
     drop(1);
@@ -63,7 +60,6 @@ void loop() {
     drop(1); // bras mouvement horizontal
     done();
     
-
     CrcLib::Update();
   };
    grab(5);
