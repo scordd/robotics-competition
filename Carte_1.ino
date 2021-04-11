@@ -32,9 +32,10 @@ void setup() {
 
   // scripting begins here
 
-  right(2650);
-  left(2650);
+  right(3100); // 3100 for 90 degrees
+  left(3100);
 
+   
  
 
 
@@ -55,25 +56,17 @@ void setup() {
 
 
 void loop() {
-
+  CrcLib::Update();
 };
-
-
-
-
-
-
-
-// BOILERPLATE FUNCTIONS BELOW
 
 int forward(int t) // moving robot forwards
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(FR, 75);
-    CrcLib::SetPwmOutput(BR, 75);
-    CrcLib::SetPwmOutput(FL, -75);
-    CrcLib::SetPwmOutput(BL, -75);
+    CrcLib::SetPwmOutput(FR, 50);
+    CrcLib::SetPwmOutput(BR, 50);
+    CrcLib::SetPwmOutput(FL, -50);
+    CrcLib::SetPwmOutput(BL, -50);
     
     CrcLib::Update();
   };
@@ -86,10 +79,10 @@ int backward(int t) // moving robot backwards
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(FR, -75);
-    CrcLib::SetPwmOutput(BR, -75);
-    CrcLib::SetPwmOutput(FL, 75);
-    CrcLib::SetPwmOutput(BL, 75);
+    CrcLib::SetPwmOutput(FR, -50);
+    CrcLib::SetPwmOutput(BR, -50);
+    CrcLib::SetPwmOutput(FL, 50);
+    CrcLib::SetPwmOutput(BL, 50);
 
     CrcLib::Update();
   };
@@ -136,7 +129,7 @@ int up(int t) // for vertical motor lifting the C.U.M.
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(PULLY, 25);
+    CrcLib::SetPwmOutput(PULLY, -100);
 
     CrcLib::Update();
   };
@@ -150,7 +143,7 @@ int down(int t) // for vertical motor lowering the C.U.M
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(PULLY, -25);
+    CrcLib::SetPwmOutput(PULLY, 50);
 
     CrcLib::Update();
   };
