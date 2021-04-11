@@ -32,8 +32,8 @@ void setup() {
 
   // scripting begins here
 
-  right(3100); // 3100 for 90 degrees
-  left(3100);
+  right(3050); // 3050 for 90 degrees
+  left(3050);
 
    
  
