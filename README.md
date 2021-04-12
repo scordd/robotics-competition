@@ -14,4 +14,4 @@ DISTANCES:
 ROTATION
 3400 == 90° (rotation)
 6800 == 180° (rotation)
-13600 == 360° (rotation)
+
