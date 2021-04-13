@@ -2,7 +2,7 @@
 using namespace Crc;
 
 #define PULLY CRC_PWM_5
-#define SERVO CRC_PWM_7
+#define SERVO CRC_PWM_6
 #define BL CRC_PWM_11
 #define BR CRC_PWM_9
 #define FL CRC_PWM_10
@@ -31,9 +31,8 @@ void setup() {
   CrcLib::InitializePwmOutput(BL);
 
   // scripting begins here
-
-  right(3050); // 3050 for 90 degrees
-  left(3050);
+  // 2800 pour 2 peids
+  // 2450 pour 90 degrée
 
    
  
@@ -56,6 +55,7 @@ void setup() {
 
 
 void loop() {
+  grab(1);
   CrcLib::Update();
 };
 
