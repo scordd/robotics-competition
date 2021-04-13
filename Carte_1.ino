@@ -33,8 +33,11 @@ void setup() {
   // scripting begins here
   // 2800 pour 2 peids
   // 2450 pour 90 degrée
+  // ADD DONETIME AFTER EVERY GRAB OR DROP
 
-   
+  up(100000);
+  down(100000);
+
  
 
 
@@ -55,7 +58,7 @@ void setup() {
 
 
 void loop() {
-  grab(1);
+ 
   CrcLib::Update();
 };
 
@@ -202,6 +205,7 @@ int donetime(int t) // turning towards the right
     CrcLib::SetPwmOutput(BL, 0);
 
     CrcLib::SetPwmOutput(PULLY, 0);
+    CrcLib::SetPwmOutput(SERVO, 0);
 
     CrcLib::Update();
   }
