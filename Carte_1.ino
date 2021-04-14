@@ -32,12 +32,31 @@ void setup() {
 
   // scripting begins here
   // 2800 pour 2 peids
-  // 2450 pour 90 degrée
+  // 1262 pour 45 degrée
+  // 2525 pour 90 degrée
+  // 5050 pour 180 degrée
   // ADD DONETIME AFTER EVERY GRAB OR DROP
-
-  up(100000);
-  down(100000);
-
+  
+  grab(5000);
+    donetime(2500);
+  forward(2800);
+    donetime(2500);
+  drop(5000);
+    donetime(2500);
+  backward(2800);
+    donetime(2500);
+  right(1262);
+    donetime(2500);
+  forward(2800);
+    donetime(2500);
+  grab(5000);
+    donetime(2500);
+  up(1000);
+    donetime(2500);
+  forward(2100);
+    donetime(2500);
+  drop(5000);
+  
  
 
 
