@@ -1,13 +1,12 @@
 #include <CrcLib.h>
 using namespace Crc;
 
-#define PULLY CRC_PWM_6
+#define PULLY CRC_PWM_5
 #define SERVO CRC_PWM_7
 #define BL CRC_PWM_11
 #define BR CRC_PWM_9
 #define FL CRC_PWM_10
 #define FR CRC_PWM_8
-
 
 void setup() {
   // put your setup code here, to run once:
@@ -20,7 +19,6 @@ void setup() {
 
   Serial.println("The debug code has been run; robot is properly connected and functioning.");
 
-  // button for starting the code
 
   // horizontal motor
   CrcLib::InitializePwmOutput(SERVO);
@@ -35,7 +33,9 @@ void setup() {
   
   CrcLib::Update();
   
-}
+  
+};
+
 
 //  forward and back are for mouvement
 // left and right are for rotation
@@ -45,8 +45,27 @@ void setup() {
 
 
 void loop() {
- 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
