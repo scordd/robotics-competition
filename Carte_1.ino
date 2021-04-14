@@ -43,17 +43,19 @@ void setup() {
     donetime(2500);
   drop(5000);
     donetime(2500);
-  backward(2800);
+  backward(3500);
     donetime(2500);
-  right(1262);
+  right(1550);
     donetime(2500);
-  forward(2800);
+  forward(4100);
     donetime(2500);
+  ball(8000);
+    donetime(1000);
   grab(5000);
     donetime(2500);
   up(1000);
     donetime(2500);
-  forward(2100);
+  forward(1300);
     donetime(2500);
   drop(5000);
   
@@ -80,6 +82,23 @@ void loop() {
  
   CrcLib::Update();
 };
+
+int ball(int t) // moving robot forwards
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(FR, 10);
+    CrcLib::SetPwmOutput(BR, 10);
+    CrcLib::SetPwmOutput(FL, -10);
+    CrcLib::SetPwmOutput(BL, -10);
+    
+    CrcLib::Update();
+  };
+  donetime(1);
+  return 0;
+};
+
+
 
 int forward(int t) // moving robot forwards
 {
@@ -224,7 +243,6 @@ int donetime(int t) // turning towards the right
     CrcLib::SetPwmOutput(BL, 0);
 
     CrcLib::SetPwmOutput(PULLY, 0);
-
 
     CrcLib::Update();
   }
