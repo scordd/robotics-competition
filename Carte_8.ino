@@ -220,7 +220,6 @@ int donetime(int t) // turning towards the right
     CrcLib::SetPwmOutput(FL, 0);
     CrcLib::SetPwmOutput(BL, 0);
 
-    CrcLib::SetPwmOutput(PULLY, 0);
 
     CrcLib::Update();
   }
