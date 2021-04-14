@@ -49,7 +49,7 @@ void setup() {
     donetime(2500);
   forward(4100);
     donetime(2500);
-  ball(8000);
+  reducedForward(8000);
     donetime(1000);
   grab(5000);
     donetime(2500);
@@ -83,7 +83,7 @@ void loop() {
   CrcLib::Update();
 };
 
-int ball(int t) // moving robot forwards
+int reducedForward(int t) // moving robot forwards
 {
   for (int i = 0; i < t; i++) {
 
