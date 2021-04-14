@@ -6,12 +6,7 @@ Overview of competition: https://robo-crc.ca/wp-content/uploads/2020/10/Invicta2
 Rules: https://robo-crc.ca/wp-content/uploads/2020/11/Invicta2021_Rules_Full_EN_v1.1-1.pdf                                 
 Construction plans: https://robo-crc.ca/wp-content/uploads/2020/11/Individual-Cards-20201103T010827Z-001.zip                     
 
-DISTANCES: 
-850 == 1 FEET
-1700 == 2 FEET
-3400 == 4 FEET
+DISTANCES AND ROTATION:
+CHECK CARTE_1.INO
 
-ROTATION
-3400 == 90° (rotation)
-6800 == 180° (rotation)
-
+CARTE_1 (FOR 2) IS COMPLETE
