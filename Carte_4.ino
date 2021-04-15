@@ -34,9 +34,61 @@ void setup() {
   // 2800 pour 2 peids
   // 2450 pour 90 degrée
   // ADD DONETIME AFTER EVERY GRAB OR DROP
-  
+
   
 
+  // first sequence for placing triangle
+   grab(500);
+    donetime(2500);
+  forward(1250);
+    donetime(500);
+  reducedForward(1000);
+    donetime(2500);
+  drop(5000);
+    donetime(2500);
+  backward(1500);
+    donetime(5000);
+
+ // second sequence to place triangle
+ right(2450);
+  donetime(2500);
+ reducedForward(32000);
+   donetime(2500);
+ grab(500);
+   donetime(5000);
+ left(2450);
+   donetime(5000);
+ forward(3500); 
+   donetime(5000);
+ reducedForward(16000);
+   donetime(2500);
+ drop(5000);
+   donetime(5000);
+ backward(3000);
+   donetime(2500);
+ 
+
+  // tennis ball sequence   (to code AFTER 1ST AND 2ND SEQUENCES)
+
+  down(1500);
+
+  
+  done();
+    donetime(2500);
+  right(1450);
+    donetime(2500);
+  forward(4100);
+    donetime(2500);
+  reducedForward(16000);
+    donetime(1000);
+    done();
+  grab(5000);
+    donetime(2500);
+  up(1000);
+    donetime(2500);
+  forward(1300);
+    donetime(2500);
+  drop(5000);
 
 
   done();
@@ -58,6 +110,93 @@ void loop() {
  
   CrcLib::Update();
 };
+
+int reducedForward(int t) // moving robot forwards
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(FR, 10);
+    CrcLib::SetPwmOutput(BR, 10);
+    CrcLib::SetPwmOutput(FL, -10);
+    CrcLib::SetPwmOutput(BL, -10);
+    
+    CrcLib::Update();
+  };
+  donetime(1);
+  return 0;
+};
+
+int reducedDown(int t) // for vertical motor lowering the C.U.M
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(PULLY, 5);
+
+    CrcLib::Update();
+  };
+  donetime(1);
+  return 0;
+};
+
+
+int reducedBackward(int t) // moving robot backwards
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(FR, -5);
+    CrcLib::SetPwmOutput(BR, -5);
+    CrcLib::SetPwmOutput(FL, 5);
+    CrcLib::SetPwmOutput(BL, 5);
+
+    CrcLib::Update();
+  };
+  donetime(1);
+  return 0;
+};
+
+
+int reducedRight(int t) // turning towards the right
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(FR, -35);
+    CrcLib::SetPwmOutput(BR, -35);
+    CrcLib::SetPwmOutput(FL, -35);
+    CrcLib::SetPwmOutput(BL, -35);
+
+    CrcLib::Update();
+  };
+  donetime(1);
+  return 0;
+};
+
+int reducedLeft(int t) // turning towards the left
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(FR, 35);
+    CrcLib::SetPwmOutput(BR, 35);
+    CrcLib::SetPwmOutput(FL, 35);
+    CrcLib::SetPwmOutput(BL, 35);
+
+    CrcLib::Update();
+  };
+  donetime(1);
+  return 0;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int forward(int t) // moving robot forwards
 {
@@ -168,7 +307,7 @@ int drop(int t) // for horizontal motors to grab object
 {
   for (int i = 0; i < t; i++) {
 
-    CrcLib::SetPwmOutput(SERVO, -75);
+    CrcLib::SetPwmOutput(SERVO, -50);
 
     CrcLib::Update();
   };
@@ -201,7 +340,6 @@ int donetime(int t) // turning towards the right
     CrcLib::SetPwmOutput(FL, 0);
     CrcLib::SetPwmOutput(BL, 0);
 
-    CrcLib::SetPwmOutput(SERVO, 0);
 
     CrcLib::Update();
   }
