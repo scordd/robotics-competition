@@ -35,42 +35,7 @@ void setup() {
   // 2450 pour 90 degrée
   // ADD DONETIME AFTER EVERY GRAB OR DROP
   
-  grab(5000);
-  donetime(2500);
-  forward(2800);
-  donetime(2500);
-  drop(5000);
-  donetime(2500);
-  backward(2800);
-  donetime(2500);
-  left(3750);
-  donetime(2500);
-  forward(2800);
-  donetime(2500);
-  grab(5000);
-  donetime(2500);
-  backward(2800);
-  donetime(2500);
-  right(3750);
-  forward(2700);
-  donetime(2500);
-  drop(250);
-  donetime(2500);
-  backward(2800);
-  donetime(2500);
-  left(3750);
-      donetime(2500);
-  forward(2800);
-      donetime(2500);
-  grab(5000);
-      donetime(2500);
-  up(500);
-      donetime(2500);
-  forward(2100);
-      donetime(2500);
-  drop(5000);  
-
-
+  
 
 
   done();
@@ -235,7 +200,7 @@ int donetime(int t) // turning towards the right
     CrcLib::SetPwmOutput(FL, 0);
     CrcLib::SetPwmOutput(BL, 0);
 
-    CrcLib::SetPwmOutput(SERVO, 0);
+    CrcLib::SetPwmOutput(PULLY, 0);
 
     CrcLib::Update();
   }
