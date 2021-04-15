@@ -42,7 +42,7 @@ void setup() {
     donetime(2500);
   forward(1250);
     donetime(500);
-  reducedForward(8000);
+  reducedForward(1000);
     donetime(2500);
   drop(5000);
     donetime(2500);
@@ -50,19 +50,23 @@ void setup() {
     donetime(5000);
 
  // second sequence to place triangle
- right(6100);
+ reducedRight(4000);
+ reducedRight(4000);
+ reducedRight(1700);
   donetime(2500);
- reducedForward(29000);
+ reducedForward(32000);
    donetime(2500);
  grab(500);
    donetime(5000);
- right(6100);
+ reducedLeft(4000);
+ reducedLeft(4000);
+ reducedLeft(2700);
    donetime(5000);
  up(1000);
    donetime(5000);
- forward(3500);
+ forward(3500); 
    donetime(5000);
- reducedForward(9750);
+ reducedForward(16000);
    donetime(2500);
  reducedDown(5000);
    donetime(2500);
@@ -74,14 +78,18 @@ void setup() {
 
   // tennis ball sequence   (to code AFTER 1ST AND 2ND SEQUENCES)
 
-  down(250);
+  down(1500);
+
+  
+  done();
     donetime(2500);
-  right(1550);
+  right(1450);
     donetime(2500);
   forward(4100);
     donetime(2500);
-  reducedForward(8000);
+  reducedForward(16000);
     donetime(1000);
+    done();
   grab(5000);
     donetime(2500);
   up(1000);
@@ -153,6 +161,42 @@ int reducedBackward(int t) // moving robot backwards
   donetime(1);
   return 0;
 };
+
+
+int reducedRight(int t) // turning towards the right
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(FR, -35);
+    CrcLib::SetPwmOutput(BR, -35);
+    CrcLib::SetPwmOutput(FL, -35);
+    CrcLib::SetPwmOutput(BL, -35);
+
+    CrcLib::Update();
+  };
+  donetime(1);
+  return 0;
+};
+
+int reducedLeft(int t) // turning towards the left
+{
+  for (int i = 0; i < t; i++) {
+
+    CrcLib::SetPwmOutput(FR, 35);
+    CrcLib::SetPwmOutput(BR, 35);
+    CrcLib::SetPwmOutput(FL, 35);
+    CrcLib::SetPwmOutput(BL, 35);
+
+    CrcLib::Update();
+  };
+  donetime(1);
+  return 0;
+};
+
+
+
+
+
 
 
 
