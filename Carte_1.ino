@@ -34,7 +34,7 @@ void setup() {
   // 2800 pour 2 peids
   // 1262 pour 45 degrée
   // 2525 pour 90 degrée
-  // 5050 pour 180 degrée
+  // 5050 pour 180 degrée  (RECALIBRATE)
   // ADD DONETIME AFTER EVERY GRAB OR DROP
   
   grab(5000);
@@ -45,7 +45,7 @@ void setup() {
     donetime(2500);
   backward(3500);
     donetime(2500);
-  right(1550);
+  right(1400);
     donetime(2500);
   forward(4100);
     donetime(2500);
@@ -55,7 +55,7 @@ void setup() {
     donetime(2500);
   up(1000);
     donetime(2500);
-  forward(1300);
+  forward(2000);
     donetime(2500);
   drop(5000);
   
