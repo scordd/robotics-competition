@@ -35,69 +35,73 @@ void setup() {
   // 2450 pour 90 degrée
   // ADD DONETIME AFTER EVERY GRAB OR DROP
 
-  
+
 
   // first sequence for placing rectangular thingamajig
   grab(5000);
   donetime(2000);
-  forward(1550);
+  forward(2050);
   donetime(500);
-  reducedForward(1000);
+  reducedForward(1500);
   donetime(2000);
   drop(2000);
   donetime(2000);
-  backward(1700);
-  donetime(2500);
+  backward(2100);
+  donetime(3500);
 
- // second sequence to place rectangle
- left(2450);
- donetime(2000);
- forward(1550);
- donetime(500);
- reducedForward(1000);
- grab(500);
- donetime(2500);
- backward(1700);
- right(2450)
- donetime(2500);
- forward(1450);
- donetime(500);
- reducedForward(1000);
- donetime(2000);
- drop(1000);
- donetime(2000);
- backward(1600);
- donetime(2500);
+  // second sequence to place rectangle
+  left(2850);
+  donetime(3500);
+  forward(1950);
+  donetime(500);
+  reducedForward(2000);
+  grab(500);
+  donetime(3500);
+  backward(2200);
+  donetime(3500);
+  reducedRight(4000);
+  reducedRight(900);
+  donetime(3500);
+  forward(1800);
+  donetime(500);
+  reducedForward(1700);
+  donetime(2000);
+  drop(1000);
+  donetime(2000);
+  backward(2000);
+  donetime(3500);
 
   // thrid sequance for trapasoidelle prism
-  right(2450);
- donetime(2500);
- forward(1550);
- donetime(500);
- reducedForward(1000);
- grab(500);
- donetime(2500);
- backward(1700);
- left(2450)
- donetime(2500);
- forward(1350);
- donetime(500);
- reducedForward(1000);
- donetime(2000);
- drop(1000);
- donetime(2000);
- backward(1400);
- donetime(2000);
-  
-  
-  
-  
+  right(2850);
+  donetime(3500);
+  forward(1650);
+  donetime(500);
+  reducedForward(1500);
+  grab(500);
+  donetime(3500);
+  backward(1800);
+  donetime(3500);
+  reducedLeft(4000);
+  reducedLeft(1610);
+  donetime(3500);
+  forward(1700);
+  donetime(500);
+  reducedForward(1600);
+  donetime(2000);
+  drop(1000);
+  donetime(2000);
+  backward(1800);
+  donetime(3000);
+
+
+
+
   // tennis ball sequence   (to code AFTER 1ST AND 2ND SEQUENCES)
 
 
-  
+
   done();
-  right(1450);
+  right(1350);
   donetime(2000);
   forward(4500);
   donetime(2500);
@@ -108,7 +112,7 @@ void setup() {
   donetime(2000);
   up(1000);
   donetime(2000);
-  forward(1300);
+  forward(1400);
   donetime(2000);
   drop(5000);
   donetime(2000);
@@ -118,7 +122,7 @@ void setup() {
   // scripting ends here
 
   CrcLib::Update();
-  
+
 }
 
 //  forward and back are for mouvement
@@ -129,7 +133,7 @@ void setup() {
 
 
 void loop() {
- 
+
   CrcLib::Update();
 };
 
@@ -141,7 +145,7 @@ int reducedForward(int t) // moving robot forwards
     CrcLib::SetPwmOutput(BR, 10);
     CrcLib::SetPwmOutput(FL, -10);
     CrcLib::SetPwmOutput(BL, -10);
-    
+
     CrcLib::Update();
   };
   donetime(1);
@@ -228,7 +232,7 @@ int forward(int t) // moving robot forwards
     CrcLib::SetPwmOutput(BR, 50);
     CrcLib::SetPwmOutput(FL, -50);
     CrcLib::SetPwmOutput(BL, -50);
-    
+
     CrcLib::Update();
   };
   donetime(1);
@@ -339,16 +343,16 @@ int drop(int t) // for horizontal motors to grab object
 void done() // stops all code
 {
 
-    CrcLib::SetPwmOutput(FR, 0);
-    CrcLib::SetPwmOutput(BR, 0);
-    CrcLib::SetPwmOutput(FL, 0);
-    CrcLib::SetPwmOutput(BL, 0);
+  CrcLib::SetPwmOutput(FR, 0);
+  CrcLib::SetPwmOutput(BR, 0);
+  CrcLib::SetPwmOutput(FL, 0);
+  CrcLib::SetPwmOutput(BL, 0);
 
-    CrcLib::SetPwmOutput(PULLY, 0);
-    CrcLib::SetPwmOutput(SERVO, 0);
+  CrcLib::SetPwmOutput(PULLY, 0);
+  CrcLib::SetPwmOutput(SERVO, 0);
 
-    CrcLib::Update();
-  
+  CrcLib::Update();
+
 
 };
 
